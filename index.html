@@ -1,141 +1,205 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Managnify — Strategy • Finance • Technology</title>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<style>
-  :root{
-    --bg:#0f172a;
-    --card:#0b1220;
-    --muted:#9aa7bd;
-    --accent1:linear-gradient(135deg,#4f46e5,#06b6d4);
-    --glass: rgba(255,255,255,0.04);
-  }
-  html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system; background:linear-gradient(180deg,#f8fafc,#eef2ff); color:#0b1220;}
-  .container{max-width:1200px;margin:0 auto;padding:28px;}
-  header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
-  .logo img{height:44px;}
-  nav{display:flex;gap:18px;align-items:center;}
-  nav a{color:var(--muted);text-decoration:none;font-weight:600;}
-  .hero{
-    display:grid;
-    grid-template-columns:1fr 540px;
-    gap:28px;
-    align-items:center;
-    margin-top:18px;
-    background: white;
-    border-radius:14px;
-    padding:36px;
-    box-shadow:0 8px 30px rgba(12,18,34,0.06);
-  }
-  .hero-left h1{font-size:32px;margin:0 0 12px 0;color:#0b1220;}
-  .hero-left p{color:var(--muted);margin:0 0 20px 0;line-height:1.6;}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
-  .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;}
-  .btn-primary{background:var(--accent1);color:white;box-shadow:0 6px 20px rgba(79,70,229,0.18);}
-  .btn-outline{border:1px solid rgba(11,18,32,0.06);color:var(--muted);background:transparent;}
-  .hero-right{border-radius:12px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;padding:8px;}
-  .services{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .card{background:white;border-radius:12px;padding:22px;box-shadow:0 8px 20px rgba(12,18,34,0.04);min-height:160px;display:flex;flex-direction:column;justify-content:space-between;}
-  .card h3{margin:0;color:#0b1220;}
-  .card p{color:var(--muted);margin:12px 0 0 0;font-size:14px;line-height:1.6;}
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px;}
-  footer{margin-top:42px;padding:26px 0;color:var(--muted);font-size:14px;text-align:center;}
-  @media(max-width:1000px){
-    .hero{grid-template-columns:1fr; padding:20px;}
-    .hero-right{order:-1;margin-bottom:12px;}
-    .services{grid-template-columns:repeat(2,1fr);}
-    .two-col{grid-template-columns:1fr;}
-  }
-  @media(max-width:600px){
-    .services{grid-template-columns:1fr;}
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managnify | Business Transformation Partner</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f8faff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0a58ca, #0056b3);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      background-image: url('banner.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    header h1, header p, header a {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    header a {
+      background: #fff;
+      color: #0a58ca;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      background: #0a58ca;
+      color: white;
+      border: 2px solid #fff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about, .services, .team, .contact {
+      margin-bottom: 60px;
+    }
+
+    .about h2, .services h2, .team h2, .contact h2 {
+      color: #0a58ca;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .member {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 220px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: #0a58ca;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9em;
+    }
+
+    @media(max-width: 600px) {
+      header h1 { font-size: 2em; }
+      header p { font-size: 1em; }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo"><img src="images/logo.svg" alt="Managnify logo"></div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#team">Team</a>
-        <a class="btn btn-outline" href="#contact">Contact</a>
-      </nav>
-    </header>
+  <header>
+    <h1>Welcome to Managnify</h1>
+    <p>Your Business Growth & Technology Partner</p>
+    <a href="#contact">Contact Us</a>
+  </header>
 
-    <main>
-      <section class="hero" aria-label="Hero">
-        <div class="hero-left">
-          <h1>Grow smarter — strategy, finance & technology for high-growth teams</h1>
-          <p>We partner with founders and executives to design reliable roadmaps, build scalable products, and measure what matters. Launch faster, reduce risk, and capture market opportunities with Managnify.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#contact">Book a Meeting</a>
-            <a class="btn btn-outline" href="#services">Explore Services</a>
-          </div>
-          <div style="margin-top:18px;color:var(--muted);font-size:13px;">
-            <strong>Trusted by:</strong> Innovative startups • Fintechs • eCommerce teams
-          </div>
-        </div>
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center;">Managnify empowers businesses through innovative solutions, strategic consulting, and technology-driven transformation. Our mission is to simplify business operations and magnify performance for sustainable success.</p>
+  </section>
 
-        <div class="hero-right" role="img" aria-label="Visual illustration">
-          <img src="images/hero.svg" alt="Hero illustration" style="width:100%;height:auto;max-width:520px;display:block;">
-        </div>
-      </section>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="consulting.png" alt="Consulting">
+        <h3>Business Consulting</h3>
+        <p>Strategic business planning, optimization, and digital transformation tailored to your industry.</p>
+      </div>
+      <div class="service-card">
+        <img src="software.png" alt="Software Development">
+        <h3>Software Development</h3>
+        <p>Custom software, web, and mobile solutions built to empower your business processes.</p>
+      </div>
+      <div class="service-card">
+        <img src="support.png" alt="Support">
+        <h3>Technical Support</h3>
+        <p>End-to-end IT support and managed services to keep your business running smoothly.</p>
+      </div>
+    </div>
+  </section>
 
-      <section id="services" class="services" aria-label="Services">
-        <div class="card">
-          <img src="images/service-design.svg" alt="" style="width:100%;height:auto;border-radius:8px;">
-          <h3>Design</h3>
-          <p>User-centered design, brand identity, and product UX that increases conversion and retention.</p>
-        </div>
-        <div class="card">
-          <img src="images/service-dev.svg" alt="" style="width:100%;height:auto;border-radius:8px;">
-          <h3>Development</h3>
-          <p>Modern web and mobile engineering, testable architecture, and clear delivery sprints.</p>
-        </div>
-        <div class="card">
-          <img src="images/service-marketing.svg" alt="" style="width:100%;height:auto;border-radius:8px;">
-          <h3>Marketing</h3>
-          <p>Growth marketing, channel strategy and performance campaigns that move the needle.</p>
-        </div>
-      </section>
+  <section class="team" id="team">
+    <h2>Our Team</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="team1.jpg" alt="Team Member">
+        <h3>Koteeswaran T</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="member">
+        <img src="team2.jpg" alt="Team Member">
+        <h3>Umaparameshwari</h3>
+        <p>Operations Head</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="two-col" id="work">
-        <div class="card">
-          <h3>Case Studies</h3>
-          <p>See how we helped a B2B SaaS startup scale ARR by 3x within 9 months — product, pricing and GTM redesign.</p>
-          <div style="margin-top:12px;"><a class="btn btn-primary" href="#contact">Get the Case Study</a></div>
-        </div>
-        <div class="card" id="team">
-          <img src="images/team.svg" alt="Team illustration" style="width:100%;height:auto;border-radius:8px;">
-          <h3>Our Team</h3>
-          <p>Senior leadership with deep experience in product, finance, and technical operations.</p>
-        </div>
-      </section>
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center;">We’re here to help your business grow. Reach us at:</p>
+    <p style="text-align:center; font-weight:600;">📧 info@managnify.in | ☎️ +91 99527 82235</p>
+  </section>
 
-      <section style="margin-top:34px;" id="contact">
-        <div class="card" style="padding:18px;">
-          <h3>Contact</h3>
-          <p style="color:var(--muted);">Book a 30-minute discovery call — we'll review your goals and recommend a 90-day roadmap.</p>
-          <form style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-            <input name="name" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #e6eef8;flex:1;min-width:180px;">
-            <input name="email" placeholder="Email address" style="padding:10px;border-radius:8px;border:1px solid #e6eef8;flex:1;min-width:180px;">
-            <button class="btn btn-primary" type="button" style="margin-left:auto;">Request Meeting</button>
-          </form>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      © YEAR_PLACEHOLDER Managnify — Strategy • Finance • Technology
-    </footer>
-  </div>
-<script>
-  document.querySelector('footer').innerHTML = '© ' + new Date().getFullYear() + ' Managnify — Strategy • Finance • Technology';
-</script>
+  <footer>
+    © 2025 Managnify. All Rights Reserved.
+  </footer>
 </body>
 </html>
+
